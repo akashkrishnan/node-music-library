@@ -1,0 +1,8 @@
+desktop.ini
+thumbs.db
+.DS_Store
+
+.idea
+logs
+node_modules
+bower_components

@@ -1,0 +1,48 @@
+doctype html
+html(lang='en', ng-app='myApp', ng-cloak)
+  head
+    title #{name}
+    base(href='/')
+    meta(charset='utf8')
+    meta(name='description', content=name)
+    meta(name='author', content='Akash Krishnan')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/theme.css')
+    link(rel='stylesheet', href='/css/custom.css')
+    link(rel='shortcut icon', href='/img/favicon.ico', type='image/x-icon')
+  body.container.boxed-layout(ng-controller='mainCtrl')
+    .wrapper
+      .header: .topbar: .container: ul.loginbar.pull-right: li: a Version 0.0.0 - 26 May 2014
+      .container.content(style='margin: 0px; padding: 0px;'): .row: .col-md-12
+        table.table.table-condensed.table-hover(style='margin: 0px; padding: 0px;')
+          thead: tr: th(ng-repeat='h in ["Cover","Artist","Album","Track","Title","Year","Genre"]') {{h}}
+          tbody
+            tr
+              td
+              td: input.content(ng-model='artist', typeahead='artist for artist in artists | filter:$viewValue | limitTo:15', placeholder='Filter by artist...', style='width: 100%;')
+              td: input.content(ng-model='album', typeahead='album for album in albums | filter:$viewValue | limitTo:15', placeholder='Filter by album...', style='width: 100%;')
+              td
+              td: input.content(ng-model='title', placeholder='Filter by title...', style='width: 100%;')
+              td
+              td: input.content(ng-model='genre', typeahead='genre for genre in genres | filter:$viewValue | limitTo:15', placeholder='Filter by genre...', style='width: 100%;')
+            tr(ng-repeat='song in songs', ng-click='download(song)', style='padding: 0px; margin: 0px')
+              td(style='vertical-align: middle; padding: 0px;'): img.r(ng-src='{{song.albumArtRef[0].url}}', width='40px', height='40px')
+              td(ng-repeat='h in ["artist", "album","tracknumber","title","year","genre"]', style='vertical-align: middle;') {{song[h]||''}}
+            tr: td(ng-repeat='n in [1,2,3,4,5,6,7]', style='padding: 0px;')
+        center: pagination.pagination-sm(ng-model='page', total-items='count', items-per-page='limit', max-size='10', boundary-links='true', direction-links='true', rotate='false', first-text='<<', previous-text='<', next-text='>', last-text='>>')
+    script(src='/socket.io/socket.io.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js')
+    script(src='/js/lib/ui-bootstrap-tpls-0.11.0.min.js')
+    script(src='/js/lib/angular-local-storage.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(src='/js/app.js')
+    script(src='/js/controllers.js')
+    script(src='/js/directives.js')
+    script(src='/js/filters.js')
+    script(src='/js/services.js')

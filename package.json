@@ -1,0 +1,18 @@
+{
+  "name": "google-music",
+  "version": "0.0.0",
+  "description": "google-music",
+  "author": [
+    {
+      "name": "Akash Krishnan",
+      "email": "ak@aakay.net",
+      "url": "http://aakay.net"
+    }
+  ],
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "mongojs": "latest",
+    "socket.io": "0.x"
+  }
+}
