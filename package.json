@@ -1,18 +1,26 @@
 {
-  "name": "google-music",
-  "version": "0.0.0",
-  "description": "google-music",
-  "author": [
-    {
-      "name": "Akash Krishnan",
-      "email": "ak@aakay.net",
-      "url": "http://aakay.net"
-    }
-  ],
+  "name": "node-music-library",
+  "description": "node-music-library",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akashkrishnan/node-music-library.git"
+  },
+  "author": "Akash Krishnan <ak@aakay.net>",
+  "bugs": {
+    "url": "https://github.com/akashkrishnan/node-music-library/issues"
+  },
+  "homepage": "https://github.com/akashkrishnan/node-music-library",
+  "private": true,
+  "scripts": {
+    "start": "supervisor -e html,js,json -i public -q server.js"
+  },
   "dependencies": {
-    "express": "latest",
-    "jade": "latest",
-    "mongojs": "latest",
-    "socket.io": "0.x"
+    "archiver": "^0.14.3",
+    "body-parser": "^1.11.0",
+    "compression": "^1.4.0",
+    "express": "^4.12.3",
+    "mongojs": "^0.18.2",
+    "socket.io": "^1.3.5"
   }
 }

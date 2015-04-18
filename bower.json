@@ -1,0 +1,13 @@
+{
+  "name": "node-music-library",
+  "version": "0.1.0",
+  "homepage": "https://github.com/akashkrishnan/node-music-library",
+  "authors": [
+    "Akash Krishnan <ak@aakay.net>"
+  ],
+  "description": "node-music-library",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.8.0-rc.4"
+  }
+}
